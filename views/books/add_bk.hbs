@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <form action="/books/add" method="POST">
+      <div class="input-field col s12 m9 l9">
+        <label for='title'> Title </label>
+        <input type="text" name="title" id='title' placeholer="title" required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='genre'> Genre </label>
+        <input type="text" name="genre" id='genre' placeholer="Genre" required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='cover_url'> Image URL</label>
+        <input type="url" name="cover_url" id='cover_url' placeholer="Book Cover Image URL" required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='description'> Description </label>
+        <textarea class="materialize-textarea" name="description" id='description' rows="8" cols="40" required></textarea>
+      </div>
+      <div class="col s12 m9 l9">
+        <button type="submit" class="btn waves-effect orange accent-4">Add!</button>
+      </div>
+    </form>
+  </div>
+</div>

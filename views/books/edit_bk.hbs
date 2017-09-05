@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <h5>Edit {{book.title}}</h5>
+    <br>
+    <form action="/books/edit/{{book.id}}" method="POST">
+      <div class="input-field col s12 m9 l9">
+        <label for='title'> Title </label>
+        <input type="text" name="title" id='title' placeholer="title" value='{{book.title}}' required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='genre'> Genre </label>
+        <input type="text" name="genre" id='genre' placeholer="Genre" value='{{book.genre}}' required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='cover_url'> Image URL</label>
+        <input type="url" name="cover_url" id='cover_url' placeholer="Book Cover Image URL" value='{{book.cover_url}}' required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='description'> Description </label>
+        <textarea class="materialize-textarea" name="description" id='description' rows="8" cols="40" required>{{book.description}}</textarea>
+      </div>
+      <div class="col s12 m9 l9">
+        <button type="submit" class="btn waves-effect orange accent-4">Confirm Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 l4">
+    <br><br>
+    <h5>{{book.title}}'s Authors</h5>
+      <ul>
+        {{#each book.authors}}
+          <li>
+            <div class="card-panel light-blue accent-1">
+              <p class='name-delete-card'>
+                <a href='/books/delete-author/{{../book.id}}/{{this.id}}'>
+                  <i class='fa fa-remove delete-icon'></i>
+                </a>
+                {{this.first_name}} {{this.last_name}}
+              </p>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class='col s12 m9 l9'>
+      <br><br>
+      <h5>Add an Author</h5>
+    </div>
+    <form action="/books/add-author-to-book" method="POST">
+      <div class="input-field col s12 m9 l9">
+        <input type="hidden" name="book_id" value="{{book.id}}">
+        <select name="author_id">
+          <option value="" disabled selected>Choose your option</option>
+          {{#each author}}
+            <option value='{{this.id}}'>{{this.first_name}} {{this.last_name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="col s12 m9 l9">
+        <button type="submit" class="btn orange accent-4 waves-effect">Add an Author</button>
+      </div>
+    </form>
+  </div>
+</div>
+<br><br><br><br><br><br>
+<div class="container">
+  <div class="row">
+    <a class="waves-effect green btn" href="/books?page=1"><i class="material-icons left">⏎</i>Back to Books!</a>
+  </div>
+</div>

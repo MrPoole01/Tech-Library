@@ -1,0 +1,26 @@
+
+<div class="container">
+  <div class="row">
+    <form action="/authors/add" method="POST">
+      <div class="input-field col s12 m9 l9">
+        <label for='first_name'> First Name </label>
+        <input type="text" name="first_name" id='first_name' placeholer="First Name" required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='last_name'> Last Name </label>
+        <input type="text" name="last_name" id='last_name' placeholer="Last Name" required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='portrait_url'> Author Image URL</label>
+        <input type="url" name="portrait_url" id='portrait_url' placeholer="Image URL" required>
+      </div>
+      <div class="input-field col s12 m9 l9">
+        <label for='bio'> Bio </label>
+        <textarea class="materialize-textarea" name="bio" id='bio' rows="8" cols="40" required></textarea>
+      </div>
+      <div class="col s12 m9 l9">
+        <button type="submit" class="btn waves-effect orange accent-4">Add!</button>
+      </div>
+    </form>
+  </div>
+</div>

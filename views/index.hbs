@@ -1,1 +1,79 @@
 
+<div class="container">
+  <div class="row">
+
+    {{#if search}}
+      <h4>This search returned {{search}}: </h4>
+      {{#if book}}
+        {{#each book}}
+         <div class="col s4">
+           <div class="card medium">
+             <div class="card-image">
+               <img src="{{this.cover_url}}">
+             </div>
+             <div class="card-content">
+              <h6 class='center'>{{this.title}}</h6>
+              <p>{{this.description}}</p>
+             </div>
+             <div class="card-action">
+               <a href="/books/{{this.id}}">Additional Info</a>
+             </div>
+           </div>
+         </div>
+         {{/each}}
+       {{/if}}
+       {{#if author}}
+         {{#each author}}
+          <div class="col s4">
+            <div class="card">
+              <div class="card-image">
+                <img src="{{this.portrait_url}}">
+              </div>
+              <div class="card-content">
+               {{this.first_name}} {{this.last_name}}
+              </div>
+              <div class="card-action">
+                <a href="/authors/{{this.id}}">Additional Info</a>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        {{/if}}
+    {{else}}
+    <br>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card medium books-card">
+          <a href="/books?page=1"><img class="books-image" src="http://hepl.lib.in.us/wp-content/uploads/2015/03/bigstock-stack-of-books-70033240-350x350.jpg" alt="">
+          <div class="card-action center"></a>
+            <a class='black-text' href="/books?page=1">Find A Book!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="card medium authors-card">
+          <a href="/authors?page=1"><img class="books-image" src="https://puvidya.files.wordpress.com/2011/03/author.jpg" alt=""></a>
+          <div class="card-action center">
+            <a class='black-text' href="/authors?page=1">Find An Author!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{/if}}
+
+    <div class='row'>
+      <div class="col s12 m6 offset-m3 l6 offset-l3 ">
+        <h5 class='center'>Search available Books and Authors!</h5>
+        <form action="/" method="GET">
+          <div class="input-field">
+            <i class="material-icons prefix">Search</i>
+            <input type="text" name="search" value="{{search}}">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

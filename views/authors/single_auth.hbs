@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 l6">
+      <br>
+      <img class="materialboxed img-for-single-author" data-caption="{{author.first_name}} {{author.last_name}}" src="{{author.portrait_url}}">
+    </div>
+    <br><br><br>
+    <div class="col s12 m5 offset-m1 l6">
+      <h5>{{author.first_name}} {{author.last_name}}</h5>
+      <p>
+        {{author.bio}}
+      </p>
+      <ul>
+        <h5>Book(s): </h5>
+        {{#each author.books}}
+          <li><a href="/books/{{this.id}}">{{this.title}}</a></li>
+        {{/each}}
+      </ul>
+      <a href="/authors/edit/{{author.id}}" class="btn orange accent-4">Edit</a>
+      <br><br>
+      <form action="/authors/delete/{{author.id}}" method="POST">
+        <button type="submit" class="btn waves-effect red lighten-1">Delete {{author.first_name}} {{author.last_name}}</button>
+      </form>
+    </div>
+  </div>
+</div>
