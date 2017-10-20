@@ -1,7 +1,6 @@
 ![Think Tank Books](public/images/book.png)
 # Think Tank Book
-mVino was created for those time you have a chance
-to experience a great wine selection. Now you are able to make a running list of those beloved selections.
+Think Tank is an app for those who would love to save a collection of their favorite tech related books. Now you are able to make a running list of those beloved selections. 
 
 Link to Live site => https://papyrus-books.herokuapp.com/
 
